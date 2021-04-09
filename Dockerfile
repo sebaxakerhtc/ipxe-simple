@@ -52,6 +52,7 @@ RUN make -C ipxe/src
 RUN rm /var/www/html/index.html
 
 ADD html/ /var/www/html/
+RUN mkdir /var/www/html/bin
 
 ADD Legacy.ipxe /ipxe/src/
 ADD EFI.ipxe /ipxe/src/

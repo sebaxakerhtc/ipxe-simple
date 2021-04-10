@@ -3,7 +3,7 @@ Easy iPXE Building from source code
 
 ## You need Docker installed for this project!
 
-### You can see how it works and download the latest images at [PCService Burgas site](https://ipxe.pcserviceburgas.com/)
+### You can see how it works and download the latest images at [ipxe.pcserviceburgas.com](https://ipxe.pcserviceburgas.com/)
 
 Special thanks to [BackyMaler](https://github.com/BuckyMaler/global) for the wonderful black theme!
 

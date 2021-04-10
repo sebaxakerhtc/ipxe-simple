@@ -11,7 +11,7 @@ Special thanks to [BackyMaler](https://github.com/BuckyMaler/global) for the won
 * Download or clone the project
 * Replace or Edit the script's Legacy.ipxe (For Legacy BIOS'es) and EFI.ipxe (For UEFI devices)
 * Run the Magic batch file (Magic.cmd on Windows, Magic.sh on Linux and Magic.command on Mac)
-* When Magic is done - open your browser and open http://localhost to download your images
+* When Magic is done - open your browser and go to http://localhost to download your images
 * Enjoy!
 
 ### You are developer from now! You builded latest iPXE from source code!!!

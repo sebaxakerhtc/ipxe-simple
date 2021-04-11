@@ -1,5 +1,7 @@
-# File "Magic.command":
-#!/bin/bash
+cd "$(dirname "$BASH_SOURCE")" || {
+    echo "Error getting script directory" >&2
+    exit 1
+}
 docker build --no-cache -t sebaxakerhtc/ipxe-simple .
 docker run --privileged --name ipxe-root -td sebaxakerhtc/ipxe-simple
 docker exec ipxe-root sh efi-iso.sh

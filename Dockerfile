@@ -4,12 +4,14 @@ MAINTAINER Alexander Sorokin <sebastian.sorokin@gmail.com>
 ## Upgrade existing packages
 RUN apt update && apt -y upgrade
 
-## for apt to be noninteractive
+## For apt to be noninteractive
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
+## Install packages
 RUN apt install -y apache2 gcc binutils make perl liblzma-dev mtools genisoimage syslinux isolinux git
 
+## Clone repo
 RUN git clone git://git.ipxe.org/ipxe.git
 
 ### SETTINGS ###
@@ -47,16 +49,19 @@ RUN sed -i 's/\/\/#undef\tCONSOLE_PCBIOS/#define\ CONSOLE_PCBIOS/' ipxe/src/conf
 RUN sed -i 's/\/\/#define\tCONSOLE_FRAMEBUFFER/#define\ CONSOLE_FRAMEBUFFER/' ipxe/src/config/console.h
 RUN sed -i 's/\/\/#define\tCONSOLE_DIRECT_VGA/#define\ CONSOLE_DIRECT_VGA/' ipxe/src/config/console.h
 
+## Run make
 RUN make -C ipxe/src
 
+## Prepare html
 RUN rm /var/www/html/index.html
-
 ADD html/ /var/www/html/
 RUN mkdir /var/www/html/bin
 
+## Adding scripts
 ADD Legacy.ipxe /ipxe/src/
 ADD EFI.ipxe /ipxe/src/
 
+## Prepare efi bootable iso script and files
 RUN mkdir -p /efiiso/efi
 ADD IPXE.IMG /efiiso/efi/
 ADD efi-iso.sh efi-iso.sh
@@ -92,16 +97,5 @@ RUN make clean -C ipxe/src
 # Expose ports.
 EXPOSE 80
 
+## Run apache2
 CMD /usr/sbin/apache2ctl -D FOREGROUND
-
-### docker build --no-cache -t sebaxakerhtc/ipxe-simple .
-### docker run --name ipxe-simple -p 80:80 -td sebaxakerhtc/ipxe-simple
-
-
-### docker run --privileged --name ipxe-root -td sebaxakerhtc/ipxe-simple
-### docker exec ipxe-root sh efi-iso.sh
-### docker stop ipxe-root
-### docker commit ipxe-root sebaxakerhtc/ipxe-simple-efi
-### docker rm ipxe-root
-### docker rmi sebaxakerhtc/ipxe-simple
-### docker run --name ipxe-simple -p 80:80 -td sebaxakerhtc/ipxe-simple-efi

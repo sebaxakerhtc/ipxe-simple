@@ -51,21 +51,12 @@ docker build --no-cache -t sebaxakerhtc/ipxe-simple . && docker run --name ipxe-
 [1]: https://github.com/sebaxakerhtc/ipxe-simple/issues
 [2]: https://github.com/sebaxakerhtc/ipxe-simple/pull/new/master
 
-<details>
-<summary><b>Mobile interface:</b></summary>
-  ![1](https://user-images.githubusercontent.com/32651506/115464640-0cb42b80-a236-11eb-91a8-bbabd3bfcd7d.jpg)
-</details>
-
-<details>
-<summary><b>Desktop interface:</b></summary>
+## Screenshots
+![1](https://user-images.githubusercontent.com/32651506/115465918-fa3af180-a237-11eb-9c42-37836427de60.jpg)
+![3](https://user-images.githubusercontent.com/32651506/115466141-53a32080-a238-11eb-9e6f-9650f6ace9fe.jpg)
 ![2](https://user-images.githubusercontent.com/32651506/115465033-a4197e80-a236-11eb-9ad3-ba6e45c2ea24.png)
-</details>
-
-<details>
-<summary><b>iPXE bootscreen and menu:</b></summary>
 ![4](https://user-images.githubusercontent.com/32651506/115465170-d75c0d80-a236-11eb-81b4-233386f17305.png)
 ![5](https://user-images.githubusercontent.com/32651506/115465172-d925d100-a236-11eb-8269-a1c582a4dae4.png)
-</details>
 
 ## License
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

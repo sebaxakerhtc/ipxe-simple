@@ -26,12 +26,12 @@ docker build --no-cache -t sebaxakerhtc/ipxe-simple .
 ```
 
 ## Step 4: Run the container
-* Run the container with default permissions:
+* Run the container:
 ```
 docker run --name ipxe-simple -p 80:80 -d sebaxakerhtc/ipxe-simple
 ```
 ## Or two commands togrther: Build and Run the container
-* Run the container with default permissions:
+* Build and Run the container:
 ```
 docker build --no-cache -t sebaxakerhtc/ipxe-simple . && docker run --name ipxe-simple -p 80:80 -d sebaxakerhtc/ipxe-simple
 ```

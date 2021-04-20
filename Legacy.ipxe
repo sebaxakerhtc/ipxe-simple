@@ -71,7 +71,7 @@ echo ${cls}
 goto start-menu
 
 :xyz
-chain --autofree https://boot.netboot.xyz/ipxe/netboot.xyz.efi || goto failed
+chain --autofree https://boot.netboot.xyz/ipxe/netboot.xyz.lkrn || goto failed
 
 :view
 isset ${memsize} && echo ${manufacturer} | ${product} | ${platform} | ${arch} | ${memsize} MiB || echo ${manufacturer} | ${product} | ${platform} | ${arch}

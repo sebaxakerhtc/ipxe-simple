@@ -12,8 +12,8 @@ You can use git command or simply download it from github
 ## Step 2: Edit files
 
 ### You can change the commands to edit config files, add/or remove packages, add/or remove files, etc.
-- a. You can can comment out "make efi" commands to save your time if you don't need them.
-- b. You can comment out settings "sed -i..." if you don' tneed them.
+- a. You can comment out "make efi" commands to save your time if you don't need them.
+- b. You can comment out settings "sed -i..." if you don't need them.
 - c. You can edit/add/or remove batch files.
 - d. Replace the content of EFI.ipxe and Legacy.ipxe script with yours.
 - e. etc.

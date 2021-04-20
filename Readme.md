@@ -15,7 +15,8 @@ You can use git command or simply download it from github
 - a. You can can comment out "make efi" commands to save your time if you don't need them.
 - b. You can comment out settings "sed -i..." if you don' tneed them.
 - c. You can edit/add/or remove batch files.
-- d. etc.
+- d. Replace the content of EFI.ipxe and Legacy.ipxe script with yours.
+- e. etc.
 
 ## Step 3: Build the project
 The build process might take some time a while as it download the origin Ubuntu docker image,

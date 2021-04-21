@@ -22,6 +22,12 @@ You can use git command or simply download it from github
 The build process might take some time a while as it download the origin Ubuntu docker image,
 clone iPXE source and build all necessary images.
 
+Navigate to the project directory (where dockerfile and other project files are)
+```
+cd /path/to/project/dir
+```
+
+and run the build
 ```
 docker build --no-cache -t sebaxakerhtc/ipxe-simple .
 ```

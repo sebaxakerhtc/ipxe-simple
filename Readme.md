@@ -4,7 +4,7 @@ Easy iPXE Building from source code
 
 ## Demo
 #### You can see demo and download the latest images at [ipxe.pcserviceburgas.com](https://ipxe.pcserviceburgas.com/)
-#### This site use crontab to rebuild iPXE every 6 hours, so you can use the latest images from there!
+#### This site uses crontab to rebuild iPXE every 6 hours, so you can use the latest images from there!
 #### Also you can chain this images from another iPXE 
 on Legacy BIOS systems
 ```

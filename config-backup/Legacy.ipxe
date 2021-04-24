@@ -1,0 +1,120 @@
+#!ipxe
+cpuid --ext 29 && set arch x64 || set arch x86
+cpuid --ext 29 && set archl amd64 || set archl i386
+cpair --foreground 7 0
+echo -n W
+cpair --foreground 2 0
+echo -n e
+cpair --foreground 3 0
+echo -n l
+cpair --foreground 4 0
+echo -n c
+cpair --foreground 5 0
+echo -n o
+cpair --foreground 6 0
+echo -n m
+cpair --foreground 1 0
+echo -n e
+cpair --foreground 7 0
+echo !
+cpair --foreground 6 0
+echo
+
+cpair --foreground 3 0
+prompt --key 0x02 --timeout 5000 Press Ctrl-B for the iPXE command line... && shell ||
+cpair --foreground 4 0
+prompt --key 0x17 --timeout 5000 Press Ctrl-W for the Wireless connection... && goto wifi || goto nextstep
+:wifi
+cpair --foreground 7 0
+iwstat
+echo -n Enter netX interface from above (net0, net1, net2 etc): && read netiface
+iwlist
+echo Listing networks on ${netiface} if available...
+echo -n Enter WiFi SSID: && read ${netiface}/ssid
+echo -n Enter WiFi password: && read ${netiface}/key
+:nextstep
+dhcp || goto failed
+cpair --foreground 6 0
+echo Loading... && goto start-menu
+:failed
+cpair --foreground 1 0
+echo Cannot estabilish connection... Are you online?
+cpair --foreground 7 0
+prompt --key 0x13 --timeout 5000 Press Ctrl-S to change settings... && config || goto tryagain
+:tryagain
+cpair --foreground 2 0
+echo Trying again... && goto nextstep
+
+:start-menu
+console --picture https://github.com/BuckyMaler/global/raw/master/assets/img/about-visual.png ||
+set cls:hex 1b:5b:4a
+set cls ${cls:string}
+set space:hex 20:20
+set space ${space:string}
+set sp:hex 20
+set sp ${sp:string}
+
+menu Welcome to the Legacy BIOS Boot Menu. Booted in [ ${arch} ] mode because CPU arch is detected as [ ${archl} ]
+item --gap --            ---------------------------------------- Just a simple menu: -----------------------------------------
+	item xyz             ${space} netboot.xyz
+	item localboot	     ${space} Boot from local storage
+item --gap --            --------------------------------------------- iPXE Tools: --------------------------------------------
+	item view            ${space} Network setting
+	item config          ${space} Configure iPXE
+	item shell           ${space} iPXE shell
+	item reboot          ${space} Reboot
+  item poweroff        ${space} Power off
+	item exit            ${space} Exit
+isset ${target} && set timeout 0 || set timeout 20000
+choose --timeout ${timeout} --default ${target} target && goto ${target} || goto failed
+echo ${cls}
+goto start-menu
+
+:xyz
+chain --autofree https://boot.netboot.xyz/ipxe/netboot.xyz.lkrn || goto failed
+
+:view
+isset ${memsize} && echo ${manufacturer} | ${product} | ${platform} | ${arch} | ${memsize} MiB || echo ${manufacturer} | ${product} | ${platform} | ${arch}
+echo -- ------------------------------------------------------------------------
+isset ${proxydhcp/filename} && echo The network settings obtained from the a proxyDHCP server || set man-flag 1
+#isset ${netX.dhcp/filename} && echo The network settings obtained from the a DHCP server || set man-flag 2
+isset ${netX.dhcp/dhcp-server} && echo The network settings obtained from the a DHCP server || set man-flag 3
+isset ${man-flag} || echo The network settings set manually
+echo
+echo ${ifname} is a  ${chip} ${pci/${busloc}.0.2}:${pci/${busloc}.2.2}
+echo mac  ${sp}: ${mac}
+echo ip  ${space}: ${ip}
+echo mask		 : ${netmask}
+echo gw  ${space}: ${gateway}
+echo dns    ${sp}: ${dns}
+echo tftp		 : ${next-server}
+echo dhcp		 : ${dhcp-server}
+echo http		 : ${boot-url}
+echo file		 : ${filename}
+echo
+prompt Press any key to back to the menu ...
+goto start-menu
+
+:config
+config
+
+:shell
+echo ${cls}
+echo Type "help" to get the list commands.
+echo Type "exit" to get the back to the menu.
+echo
+shell
+goto start-menu
+
+:reboot
+reboot --warm || goto failed
+goto start-menu
+
+:poweroff
+poweroff || goto failed
+goto start-menu
+
+:exit
+echo Continuing BIOS boot order...
+sleep 1
+exit 0

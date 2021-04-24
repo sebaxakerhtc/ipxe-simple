@@ -48,7 +48,7 @@ docker build --no-cache -t sebaxakerhtc/ipxe-simple .
 ## Step 4: Run the container
 Run the container:
 ```
-docker run --name ipxe-simple -p 80:80 -d sebaxakerhtc/ipxe-simple
+docker run --restart unless-stopped --name ipxe-simple -p 80:80 -d sebaxakerhtc/ipxe-simple
 ```
 
 ## Step 6:Enjoy!

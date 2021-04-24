@@ -3,7 +3,7 @@ Easy iPXE Building from source code
 ### You need Docker installed for this project!
 
 ## Demo
-#### You can see demo and download the latest images at [ipxe.pcserviceburgas.com](https://ipxe.pcserviceburgas.com/)
+#### You can see evolution of this project at [master-branch](https://github.com/sebaxakerhtc/ipxe-simple)
 #### This site uses crontab to rebuild iPXE every 6 hours, so you can use the latest images from there!
 #### Also you can chain this images from another iPXE 
 on Legacy BIOS systems

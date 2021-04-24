@@ -4,7 +4,7 @@ Easy iPXE Building from source code
 
 ## Demo
 #### You can see demo and download the latest images at [ipxe.pcserviceburgas.com](https://ipxe.pcserviceburgas.com/)
-#### This site uses crontab to rebuild iPXE every 6 hours, so you can use the latest images from there!
+#### This build uses crontab to rebuild iPXE every 6 hours, so you can use the latest images from there!
 #### Also you can chain this images from another iPXE 
 on Legacy BIOS systems
 ```
@@ -24,7 +24,7 @@ You can use git command or simply download it from github
 
 ## Step 2: Edit files
 
-### You can change the commands to edit config files, add/or remove packages, add/or remove files, etc.
+### You can change the commands to edit config files, add/or remove packages, files, etc.
 - a. You can comment out "make efi" commands to save your time if you don't need them.
 - b. You can comment out settings "sed -i..." if you don't need them.
 - c. You can edit/add/or remove batch files.
@@ -40,20 +40,15 @@ Navigate to the project directory (where dockerfile and other project files are)
 cd /path/to/project/dir
 ```
 
-and run the build
+and start the build
 ```
 docker build --no-cache -t sebaxakerhtc/ipxe-simple .
 ```
 
 ## Step 4: Run the container
-* Run the container:
+Run the container:
 ```
 docker run --name ipxe-simple -p 80:80 -d sebaxakerhtc/ipxe-simple
-```
-## Or two commands togrther: Build and Run the container
-* Build and Run the container:
-```
-docker build --no-cache -t sebaxakerhtc/ipxe-simple . && docker run --name ipxe-simple -p 80:80 -d sebaxakerhtc/ipxe-simple
 ```
 
 ## Step 6:Enjoy!

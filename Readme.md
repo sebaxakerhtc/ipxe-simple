@@ -66,8 +66,8 @@ docker run --restart unless-stopped --name ipxe-simple -p 80:80 -d sebaxakerhtc/
 [2]: https://github.com/sebaxakerhtc/ipxe-simple/pull/new/master
 
 ## Screenshots
-![1](https://user-images.githubusercontent.com/32651506/115973139-7cd6f000-a55b-11eb-871e-351d8c13016c.jpg)
-![2](https://user-images.githubusercontent.com/32651506/115973142-7fd1e080-a55b-11eb-9cd5-936f524e08be.jpg)
+![1](https://user-images.githubusercontent.com/32651506/115973212-f373ed80-a55b-11eb-9604-34569ce96bf7.jpg)
+![2](https://user-images.githubusercontent.com/32651506/115973214-f53db100-a55b-11eb-8255-665269fc0b59.jpg)
 ![3](https://user-images.githubusercontent.com/32651506/115973144-82343a80-a55b-11eb-88e6-e603918b0d3a.png)
 ![4](https://user-images.githubusercontent.com/32651506/115973146-84969480-a55b-11eb-84fa-3aa4ef2118e0.png)
 ![5](https://user-images.githubusercontent.com/32651506/115465172-d925d100-a236-11eb-8269-a1c582a4dae4.png)

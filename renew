@@ -1,1 +1,1 @@
-0 */6 * * * ./renew.sh >> /renew.log 2>&1
+0 */6 * * * /renew.sh >> /renew.log 2>&1

@@ -69,10 +69,10 @@ echo "Creating EFI Images"
 make bin-x86_64-efi/ipxe.efi EMBED=EFI.ipxe -C ipxe/src && cp ipxe/src/bin-x86_64-efi/ipxe.efi /var/www/html/bin/bootx64.efi
 make bin-x86_64-efi/ipxe.usb EMBED=EFI.ipxe -C ipxe/src && mv ipxe/src/bin-x86_64-efi/ipxe.usb /var/www/html/bin/ipxe-efi-x64.usb
 make bin-x86_64-efi/ipxe.iso EMBED=EFI.ipxe -C ipxe/src && mv ipxe/src/bin-x86_64-efi/ipxe.iso /var/www/html/bin/ipxe-efi-x64.iso
+make bin-x86_64-efi/snponly.efi EMBED=EFI.ipxe -C ipxe/src && cp ipxe/src/bin-x86_64-efi/snponly.efi /var/www/html/bin/snponly-x64.efi
 make bin-i386-efi/ipxe.efi EMBED=EFI.ipxe -C ipxe/src && cp ipxe/src/bin-i386-efi/ipxe.efi /var/www/html/bin/bootia32.efi
 make bin-i386-efi/ipxe.usb EMBED=EFI.ipxe -C ipxe/src && mv ipxe/src/bin-i386-efi/ipxe.usb /var/www/html/bin/ipxe-efi-x86.usb
 make bin-i386-efi/ipxe.iso EMBED=EFI.ipxe -C ipxe/src && mv ipxe/src/bin-i386-efi/ipxe.iso /var/www/html/bin/ipxe-efi-x86.iso
-make bin-x86_64-efi/snponly.efi EMBED=EFI.ipxe -C ipxe/src && cp ipxe/src/bin-x86_64-efi/snponly.efi /var/www/html/bin/snponly-x64.efi
 make bin-i386-efi/snponly.efi EMBED=EFI.ipxe -C ipxe/src && cp ipxe/src/bin-i386-efi/snponly.efi /var/www/html/bin/snponly-x86.efi
 echo "Cleaning project"
 make clean -C ipxe/src

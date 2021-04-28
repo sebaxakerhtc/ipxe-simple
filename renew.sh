@@ -1,4 +1,6 @@
 #! /bin/bash
+VAR1=$(git -C /ipxe log -1 --pretty=format:"%h" --abbrev-commit --abbrev=4)
+grep -q "${VAR1}" /var/www/html/index.html && echo "There is no changes at `date`" && exit ||
 rm -rf /ipxe
 rm /config-backup/branding.h
 rm /config-backup/general.h
@@ -7,7 +9,6 @@ echo "ipxe dir removed"
 cp /config-backup/wait.html /var/www/html/index.html
 rm /var/www/html/bin/*
 git clone git://git.ipxe.org/ipxe.git
-VAR1=$(git -C /ipxe log -1 --pretty=format:"%h" --abbrev-commit --abbrev=4)
 sed -i "s/gitversion/${VAR1}/" /var/www/html/index.html
 echo "SETTINGS"
 echo BackUp files

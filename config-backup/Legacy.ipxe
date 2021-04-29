@@ -57,13 +57,15 @@ set sp ${sp:string}
 menu Welcome to the Legacy BIOS Boot Menu. Booted in [ ${arch} ] mode because CPU arch is detected as [ ${archl} ]
 item --gap --            ---------------------------------------- Just a simple menu: -----------------------------------------
 	item xyz             ${space} netboot.xyz
+	item cz              ${space} netboot.cz
+	item salstar         ${space} boot.salstar.sk
 	item localboot	     ${space} Boot from local storage
 item --gap --            --------------------------------------------- iPXE Tools: --------------------------------------------
 	item view            ${space} Network setting
 	item config          ${space} Configure iPXE
 	item shell           ${space} iPXE shell
 	item reboot          ${space} Reboot
-  item poweroff        ${space} Power off
+  	item poweroff        ${space} Power off
 	item exit            ${space} Exit
 isset ${target} && set timeout 0 || set timeout 20000
 choose --timeout ${timeout} --default ${target} target && goto ${target} || goto failed
@@ -72,6 +74,12 @@ goto start-menu
 
 :xyz
 chain --autofree https://boot.netboot.xyz/ipxe/netboot.xyz.lkrn || goto failed
+
+:cz
+chain --autofree http://netboot.cz/dl/netboot.lkrn
+
+:salstar
+chain --autofree http://boot.salstar.sk/ipxe/ipxe.lkrn || goto failed
 
 :view
 isset ${memsize} && echo ${manufacturer} | ${product} | ${platform} | ${arch} | ${memsize} MiB || echo ${manufacturer} | ${product} | ${platform} | ${arch}

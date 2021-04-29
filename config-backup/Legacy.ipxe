@@ -76,7 +76,7 @@ goto start-menu
 chain --autofree https://boot.netboot.xyz/ipxe/netboot.xyz.lkrn || goto failed
 
 :cz
-chain --autofree http://netboot.cz/dl/netboot.lkrn
+chain --autofree http://netboot.cz/dl/netboot.lkrn || goto failed
 
 :salstar
 chain --autofree http://boot.salstar.sk/ipxe/ipxe.lkrn || goto failed

@@ -20,6 +20,24 @@ echo !
 cpair --foreground 6 0
 echo
 
+echo ______iiii__PPPPPPPPPPPPPPPPP___XXXXXXX_______XXXXXXXEEEEEEEEEEEEEEEEEEEEEE____
+echo _____i::::i_P::::::::::::::::P__X:::::X_______X:::::XE::::::::::::::::::::E____
+echo ______iiii__P::::::PPPPPP:::::P_X:::::X_______X:::::XE::::::::::::::::::::E____
+echo ____________PP:::::P_____P:::::PX::::::X_____X::::::XEE::::::EEEEEEEEE::::E____
+echo ____iiiiiii___P::::P_____P:::::PXXX:::::X___X:::::XXX__E:::::E_______EEEEEE____
+echo ____i:::::i___P::::P_____P:::::P___X:::::X_X:::::X_____E:::::E_________________
+echo _____i::::i___P::::PPPPPP:::::P_____X:::::X:::::X______E::::::EEEEEEEEEE_______
+echo _____i::::i___P:::::::::::::PP_______X:::::::::X_______E:::::::::::::::E_______
+echo _____i::::i___P::::PPPPPPPPP_________X:::::::::X_______E:::::::::::::::E_______
+echo _____i::::i___P::::P________________X:::::X:::::X______E::::::EEEEEEEEEE_______
+echo _____i::::i___P::::P_______________X:::::X_X:::::X_____E:::::E_________________
+echo _____i::::i___P::::P____________XXX:::::X___X:::::XXX__E:::::E_______EEEEEE____
+echo ____i::::::iPP::::::PP__________X::::::X_____X::::::XEE::::::EEEEEEEE:::::E____
+echo ____i::::::iP::::::::P__________X:::::X_______X:::::XE::::::::::::::::::::E____
+echo ____i::::::iP::::::::P__________X:::::X_______X:::::XE::::::::::::::::::::E____
+echo ____iiiiiiiiPPPPPPPPPP__________XXXXXXX_______XXXXXXXEEEEEEEEEEEEEEEEEEEEEE____
+sleep 3
+
 cpair --foreground 3 0
 prompt --key 0x02 --timeout 5000 Press Ctrl-B for the iPXE command line... && shell ||
 cpair --foreground 4 0

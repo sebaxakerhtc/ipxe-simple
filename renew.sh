@@ -1,4 +1,5 @@
 #! /bin/bash
+git -C /ipxe pull
 VAR1=$(git -C /ipxe log -1 --pretty=format:"%h" --abbrev-commit --abbrev=4)
 grep -q "${VAR1}" /var/www/html/index.html && echo "There is no changes at `date`" && exit ||
 rm -rf /ipxe

@@ -81,5 +81,7 @@ make clean -C ipxe/src
 rm /var/www/html/index.html
 cp /config-backup/orig.html /var/www/html/index.html
 sed -i "s/gitversion/${VAR1}/" /var/www/html/index.html
+cp /config-backup/branding.h ipxe/src/config/branding.h
+cp /config-backup/general.h ipxe/src/config/general.h
+cp /config-backup/console.h ipxe/src/config/console.h
 echo "Script completed"
-sleep 3

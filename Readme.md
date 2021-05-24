@@ -51,7 +51,7 @@ Run the container:
 docker run --restart unless-stopped --name ipxe-simple -p 80:80 -d sebaxakerhtc/ipxe-simple
 ```
 
-## Step 6:Enjoy!
+## Step 5:Enjoy!
 ### Open your browser and type http://localhost or your choosen ip/port
 
 ## Contributing

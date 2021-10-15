@@ -26,6 +26,8 @@ COPY renew /etc/cron.d/renew
  
 # Give execution rights on the cron job
 RUN chmod 0644 /etc/cron.d/renew
+### Uncomment this line for working WPA2 connections ###
+# RUN git -C ipxe reset --hard 0fb37a4
 
 # Apply cron job
 RUN crontab /etc/cron.d/renew

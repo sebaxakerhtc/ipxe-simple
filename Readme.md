@@ -3,21 +3,21 @@ Easy iPXE Building from source code
 ### You need Docker installed for this project!
 
 ## Demo
-#### You can see demo and download the latest images at [ipxe.pcserviceburgas.com](https://ipxe.pcserviceburgas.com/)
+#### You can see demo and download the latest images at [ipxe.sebaxakerhtc.pro](https://ipxe.sebaxakerhtc.pro/)
 #### Video instruction on [YouTube](https://youtu.be/kvNX7X7d2tw)
 #### This build uses crontab to check any changes of iPXE source every 1 hour and if so then rebuild images. So you can use the latest images from there!
 #### Also you can chain this images from another iPXE 
 on Legacy BIOS systems
 ```
-chain --autofree https://ipxe.pcserviceburgas.com/bin/ipxe.lkrn
+chain --autofree https://ipxe.sebaxakerhtc.pro/bin/ipxe.lkrn
 ```
 or on EFI (x64)
 ```
-chain --autofree https://ipxe.pcserviceburgas.com/bin/bootx64.efi
+chain --autofree https://ipxe.sebaxakerhtc.pro/bin/bootx64.efi
 ```
 or on EFI (x86) netboot.xyz not provided for this platform
 ```
-chain --autofree https://ipxe.pcserviceburgas.com/bin/bootia32.efi
+chain --autofree https://ipxe.sebaxakerhtc.pro/bin/bootia32.efi
 ```
 ## Step 1: Download the project.
 

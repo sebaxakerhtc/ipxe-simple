@@ -33,7 +33,7 @@ RUN crontab /etc/cron.d/renew
 # Clone repo for script to work for the first time
 RUN git clone git://git.ipxe.org/ipxe.git
 
-### Uncomment this line for working WPA2 connections ###
+### Uncomment next line for working WPA2 connections ###
 # RUN git -C ipxe reset --hard 0fb37a4
 
 # Build latest images

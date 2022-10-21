@@ -22,10 +22,7 @@ ADD renew.sh /renew.sh
 RUN chmod +x /renew.sh
  
 # Clone repo for script to work for the first time
-RUN git clone git://git.ipxe.org/ipxe.git
-
-# Reset to Wi-Fi working commit
-RUN git -C ipxe reset --hard 0fb37a4
+RUN git clone -b WPA2-work https://github.com/sebaxakerhtc/ipxe.git
 
 # Build latest images
 RUN /renew.sh

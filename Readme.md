@@ -1,27 +1,14 @@
-Easy iPXE Building from source code
-===================================
+Easy iPXE Building from source code with working WPA2-PSK
+==========================================================
 ### You need Docker installed for this project!
 
-## Demo
-#### You can see demo and download the latest images at [ipxe.sebaxakerhtc.pro](https://ipxe.sebaxakerhtc.pro/)
-#### Video instruction on [YouTube](https://youtu.be/kvNX7X7d2tw)
-#### This build uses crontab to check any changes of iPXE source every 1 hour and if so then rebuild images. So you can use the latest images from there!
-#### Also you can chain this images from another iPXE 
-on Legacy BIOS systems
-```
-chain --autofree https://ipxe.sebaxakerhtc.pro/bin/ipxe.lkrn
-```
-or on EFI (x64)
-```
-chain --autofree https://ipxe.sebaxakerhtc.pro/bin/bootx64.efi
-```
-or on EFI (x86) netboot.xyz not provided for this platform
-```
-chain --autofree https://ipxe.sebaxakerhtc.pro/bin/bootia32.efi
-```
 ## Step 1: Download the project.
 
 You can use git command or simply download it from github
+
+```
+git clone -b Wi-Fi https://github.com/sebaxakerhtc/ipxe-simple.git
+```
 
 ## Step 2: Edit files
 
@@ -38,7 +25,7 @@ clone iPXE source and build all necessary images.
 
 Navigate to the project directory (where dockerfile and other project files are)
 ```
-cd /path/to/project/dir
+cd ipxe-simple
 ```
 
 and start the build

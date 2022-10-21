@@ -2,6 +2,8 @@ Easy iPXE Building from source code
 ===================================
 ### You need Docker installed for this project!
 
+# If you need working iPXE with Wi-Fi over WPA2-PSK go to [this branch](https://github.com/sebaxakerhtc/ipxe-simple/tree/Wi-Fi)!
+
 ## Demo
 #### You can see demo and download the latest images at [ipxe.sebaxakerhtc.pro](https://ipxe.sebaxakerhtc.pro/)
 #### Video instruction on [YouTube](https://youtu.be/kvNX7X7d2tw)

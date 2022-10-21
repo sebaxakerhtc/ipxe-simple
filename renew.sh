@@ -18,7 +18,7 @@ cp ipxe/src/config/general.h /config-backup/
 cp ipxe/src/config/console.h /config-backup/
 echo "Editing branding.h"
 sed -i 's/#define\ PRODUCT_NAME\ ""/#define\ PRODUCT_NAME\ "iPXE-Simple\ project\ by\ sebaxakerhtc"/' ipxe/src/config/branding.h
-sed -i 's/#define\ PRODUCT_SHORT_NAME\ "iPXE"/#define\ PRODUCT_SHORT_NAME\ "ipxe-wpa2-psk"/' ipxe/src/config/branding.h
+sed -i 's/#define\ PRODUCT_SHORT_NAME\ "iPXE"/#define\ PRODUCT_SHORT_NAME\ "ipxe-wpa2"/' ipxe/src/config/branding.h
 sed -i 's/#define\ PRODUCT_URI\ "http:\/\/ipxe.org"/#define\ PRODUCT_URI\ "https:\/\/paypal.me\/sebaxakerhtc"/' ipxe/src/config/branding.h
 sed -i 's/#define\ PRODUCT_TAG_LINE\ "Open\ Source\ Network\ Boot\ Firmware"/#define\ PRODUCT_TAG_LINE\ "by\ sebaxakerhtc"/' ipxe/src/config/branding.h
 echo "Editing general.h"

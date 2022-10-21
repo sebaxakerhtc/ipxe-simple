@@ -9,7 +9,7 @@ rm /config-backup/console.h
 echo "ipxe dir removed"
 cp /config-backup/wait.html /var/www/html/index.html
 rm /var/www/html/bin/*
-git clone git://git.ipxe.org/ipxe.git
+git clone -b WPA2-work https://github.com/sebaxakerhtc/ipxe.git
 sed -i "s/gitversion/${VAR1}/" /var/www/html/index.html
 echo "SETTINGS"
 echo BackUp files

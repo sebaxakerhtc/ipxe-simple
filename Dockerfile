@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:20.04
 MAINTAINER Alexander Sorokin <sebastian.sorokin@gmail.com>
 
 ## Upgrade existing packages
@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
 ## Install packages
-RUN apt-get install -y apache2 gcc binutils make perl liblzma-dev mtools syslinux isolinux git xorriso cron
+RUN apt-get install -y apache2 gcc binutils make perl liblzma-dev mtools syslinux isolinux git xorriso
 
 ## Prepare html
 RUN rm /var/www/html/index.html
@@ -20,18 +20,12 @@ RUN mkdir /var/www/html/bin
 ADD config-backup /config-backup
 ADD renew.sh /renew.sh
 RUN chmod +x /renew.sh
-
-# Copy renew file to the cron.d directory
-COPY renew /etc/cron.d/renew
  
-# Give execution rights on the cron job
-RUN chmod 0644 /etc/cron.d/renew
-
-# Apply cron job
-RUN crontab /etc/cron.d/renew
-
 # Clone repo for script to work for the first time
 RUN git clone git://git.ipxe.org/ipxe.git
+
+# Reset to Wi-Fi working commit
+RUN git -C ipxe reset --hard 0fb37a4
 
 # Build latest images
 RUN /renew.sh
@@ -40,4 +34,4 @@ RUN /renew.sh
 EXPOSE 80
 
 ## Run apache2
-CMD /usr/sbin/cron start && /usr/sbin/apache2ctl -D FOREGROUND
+CMD /usr/sbin/apache2ctl -D FOREGROUND

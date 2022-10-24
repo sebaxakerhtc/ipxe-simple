@@ -20,12 +20,18 @@ echo !
 cpair --foreground 6 0
 echo
 
-sleep 3
+echo This script will help you connect your device
+echo to WiFi network via WPA2-PSK encryption.
+echo You will be asked abot sensetive data
+echo and info about your server.
+echo If there's no bootfile found - then
+echo you wil see integrated menu!
+echo Good Luck and enjoy!
+
+sleep 6
 
 cpair --foreground 3 0
-prompt --key 0x02 --timeout 5000 Press Ctrl-B for the iPXE command line... && shell ||
-cpair --foreground 4 0
-prompt --key 0x17 --timeout 5000 Press Ctrl-W for the Wireless connection... && goto wifi || goto nextstep
+prompt --key 0x02 --timeout 5000 Press Ctrl-B for the iPXE command line... && cpair --foreground 7 0 && shell ||
 :wifi
 cpair --foreground 7 0
 iwstat
@@ -37,7 +43,7 @@ echo -n Enter WiFi password: && read ${netiface}/key
 :nextstep
 dhcp || goto failed
 cpair --foreground 6 0
-echo Loading... && goto start-menu
+echo Connection estabilished! && goto find-menu
 :failed
 cpair --foreground 1 0
 echo Cannot estabilish connection... Are you online?
@@ -47,6 +53,18 @@ prompt --key 0x13 --timeout 5000 Press Ctrl-S to change settings... && config ||
 cpair --foreground 2 0
 echo Trying again... && goto nextstep
 
+:find-menu
+echo -n Enter Next Server: && read boot-server
+echo -n Enter Boot filename(For example menu.ipxe): && read boot-file
+echo -n Enter Boot protocol (http or tftp): && read boot-proto
+echo Trying boot...
+chain ${boot-proto}://${boot-server}/${boot-file} || goto load-menu
+:load-menu
+imgfree
+echo boot failed.
+echo ${boot-proto}://${boot-server}/${boot-file} not accesable.
+echo We will load integrated menu...
+sleep 3
 :start-menu
 console --picture https://github.com/BuckyMaler/global/raw/master/assets/img/about-visual.png ||
 set cls:hex 1b:5b:4a

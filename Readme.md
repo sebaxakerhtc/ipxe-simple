@@ -5,7 +5,6 @@ Easy iPXE Building from source code
 # If you need working iPXE with Wi-Fi over WPA2-PSK go to [this branch](https://github.com/sebaxakerhtc/ipxe-simple/tree/Wi-Fi)!
 
 ## Demo
-#### You can see demo and download the latest images at [ipxe.sebaxakerhtc.pro](https://ipxe.sebaxakerhtc.pro/)
 #### Video instruction on [YouTube](https://youtu.be/kvNX7X7d2tw)
 #### This build uses crontab to check any changes of iPXE source every 1 hour and if so then rebuild images. So you can use the latest images from there!
 #### Also you can chain this images from another iPXE 

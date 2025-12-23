@@ -31,7 +31,7 @@ RUN chmod 0644 /etc/cron.d/renew
 RUN crontab /etc/cron.d/renew
 
 # Clone repo for script to work for the first time
-RUN git clone git://git.ipxe.org/ipxe.git
+RUN git clone https://github.com/ipxe/ipxe.git
 
 # Build latest images
 RUN /renew.sh
